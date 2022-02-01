@@ -14,7 +14,10 @@
 </head>
 
 <body class="bg-gray-400">
-    <nav></nav>
+    <header>
+    <h1 class="text-xl text-left">Portfolio Personal</h1>
+        <nav></nav>
+    </header>    
     <main>
         <div>
             <h1 class="text-5xl text-center">Portfolio Personal</h1>
