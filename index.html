@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Adrián Sánchez Millán">
+    <meta name="copyright" content="© 2022 Portfolio Adrián Sánchez Millán">
+    <title>Portfolio AS Millán</title>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.2/dist/flowbite.min.css" />
+    <script src="https://unpkg.com/flowbite@1.4.2/dist/flowbite.js"></script>
+    <script src="js/scrips.js"></script>
+
+
+
+</head>
+
+<body class="mx-auto bg-slate-300 font-mono tracking-tight">
+    <!-- <div class="grid grid-cols-1"> -->
+
+    <header class="flex flex-wrap justify-between py-8">
+        <nav class="flex flex-wrap w-full items-center justify-between ">
+
+            <h1 class="flex text-4xl text-left text-zinc-700 p-4 px-8 cursor-default">Portfolio Personal</h1>
+            <ul class="flex px-8">
+                <li class="mr-2">
+                    <a data-modal-toggle="modal_contacto" class="cursor-pointer text-center p-2 rounded-lg border-2 border-stone-900 bg-stone-400 text-zinc-900 shadow-lg shadow-stone-500/70 hover:shadow-lg hover:shadow-emerald-500/50 hover:ring-2 ring-emerald-500 hover:bg-emerald-300">Contacto</a>
+                </li>
+                <li class="mr-2">
+                    <a id="download_cv" href="donwload/CV_adrian.pdf" download="CV_Adrián Sánchez Millán" target="_blank" class="text-center p-2 rounded-lg border-2 border-stone-900 bg-stone-400 text-zinc-900 shadow-lg shadow-stone-500/70 hover:shadow-lg hover:shadow-emerald-500/50 hover:ring-2 ring-emerald-500 hover:bg-emerald-300 "
+                        href="#">Descárgate mi CV</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <!-- MODAL de CONTACTO -->
+    <div id="modal_contacto" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+            <!-- Modal content -->
+            <div class="relative bg-red rounded-lg shadow bg-gray-700">
+                <div class="flex justify-end p-2">
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-gray-800 hover:text-white" data-modal-toggle="modal_contacto">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                    </button>
+                </div>
+                <form name="contact" class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" action="php/mail.php" method="post" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contact">
+
+                    <h3 class="text-3xl font-medium text-gray-900 text-white">Contáctame</h3>
+                    <div>
+                        <label for="name" class="block mb-2 text-lg font-medium text-gray-900 text-gray-300">Nombre</label>
+                        <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block mb-2 text-lg font-medium text-gray-900 text-gray-300">Email</label>
+                        <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block mb-2 text-lg font-medium text-gray-900 text-gray-300">Mensaje</label>
+                        <textarea type="text" name="message" id="message" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-500 focus:border-emerald-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="w-full text-lg text-center p-2 rounded-lg border-2 border-stone-900 bg-stone-400 text-zinc-900 shadow-lg shadow-stone-500/70 hover:shadow-lg hover:shadow-emerald-500/50 hover:ring-2 ring-emerald-500 hover:bg-emerald-300">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO DE LA PAGINA -->
+    <div class="container mx-auto">
+        <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-8">
+            <div class="px-4" data-aos="fade-right" data-aos-duration="1500">
+                <h1 class="text-7xl text-left text-zinc-700">Adrián</h1>
+                <h1 class="text-7xl text-left text-zinc-700">Sánchez Millán</h1>
+            </div>
+            <div class="px-4" data-aos="fade-left" data-aos-duration="1500">
+                <p class="text-xl text-cyan-900 py-2">Tras varios años trabajando en el mundo audiovisual donde adquirí y mejoré diversas competencias, como el trabajo en equipo, luchar por un objetivo común, e improvisar soluciones. Decidí dar otro paso y cambié de sector profesional formándome
+                    en desarrollo web, quedándome atrapado en el mundo digital.</p>
+                <p class="text-xl text-cyan-900 py-2">Soy una persona proactiva y autodidacta, me encuentro desarrollando mi propia plataforma web destinada al sector servicios, a la misma vez que busco empleo activamente como desarrollador web.</p>
+            </div>
+            <div class="px-4" data-aos="fade-up" data-aos-duration="1500">
+                <h1 class="text-5xl text-left text-zinc-700">Experiencia Laboral</h1>
+                <div class="py-4 px-4">
+                    <h3 class="text-2xl text-left text-zinc-700">2022 - Actualidad</h3>
+                    <p class="text-xl text-cyan-900 underline font-bold">Desarrollador de aplicaciones web - Profesional independiente.</p>
+                    <p class="text-xl text-cyan-900">Actualmente desarrollando una plataforma web B2C para el sector servicios, implementando las herramientas Laravel y JavaScript principalmente con base de datos MySQL.</p>
+                </div>
+                <div class="py-4 px-4">
+                    <h3 class="text-2xl text-left text-zinc-700">2021</h3>
+                    <p class="text-xl text-cyan-900 underline font-bold">Desarrollador de aplicaciones web en 10Code Software Design.</p>
+                    <p class="text-xl text-cyan-900">Realización de la FCT, funciones con Laravel 8 y React.</p>
+                    <p class="text-xl text-cyan-900">Dos Hermanas, Sevilla.</p>
+                </div>
+            </div>
+            <div class="px-4" data-aos="fade-up" data-aos-duration="1500">
+                <h1 class="text-5xl text-left text-zinc-700">Lenguajes que más uso</h1>
+                <div class="py-4 px-4">
+                    <canvas id="myChart" width="360" height="220"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-700 mt-6">
+        <div class="flex flex-wrap justify-around">
+            <div class="text-zinc-200 lg:py-4 sm:py-6">
+                <p class="text-2xl underline font-bold">Contacto</p>
+                <p>Tlno: 665 37 94 11</p>
+                <p>Email: asmillanwebdeveloper@gmail.com</p>
+            </div>
+            <div class="grid grid-cols-2 gap-6 py-6">
+                <a href="https://www.linkedin.com/in/adriansanchezmillan/">
+                    <img src="donwload/qr-code_AdrianSanchezMillan.png" width="100px" />
+                </a>
+                <a href="https://github.com/LinceIberico/">
+                    <img src="donwload/qr-code_GitHub_AdrianSanchezMillan.png" width="100px" />
+                </a>
+            </div>
+        </div>
+        <div class="text-center lg:py-4 sm:py-6">
+            <p class="text-lg text-zinc-200">2022 © - Portfolio Adrián Sánchez Millán</p>
+        </div>
+    </footer>
+
+
+
+    <script>
+        AOS.init()
+    </script>
+
+</body>
+
+</html>
